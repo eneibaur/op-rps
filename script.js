@@ -1,6 +1,20 @@
 // create function getComputerChoice
+function getComputerChoice(){
 // create variable random in function
-// // set random to a random number between 1 and 3
+// set random to a random number between 1 and 3
+    let random = Math.floor(Math.random()*3) + 1;
+    let computerChoice = "";
+    if (random == 1)
+        computerChoice = "Rock";
+    else if (random == 2) 
+        computerChoice == "Paper";
+    else if (random == 3)
+        computerChoice = "Scissors";
+    return computerChoice
+}
+
+let computerChoice = getComputerChoice();
+
 // create variable computerChoice containing ""
 // if random equals 1, set computerChoice to Rock
 // if random equals 2, set computerChoice to Paper
