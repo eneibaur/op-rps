@@ -31,23 +31,35 @@ function getPlayerChoice(){
     return playerChoice;
     }
 
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
-console.log(playerChoice);
-console.log(computerChoice);
-
-
 // create function to play a round of rps called playRound
 //     with two parameters, (computerChoice, playerChoice)
-// compare playerChoice to computerChoice
-//     if playerChoice strict equals computerChoice, return tie
-//     if playerChoice is scissors
+function rpsRound (comp, player){
+//  compare playerChoice to computerChoice
+//  if playerChoice strict equals computerChoice, return tie
+    if (comp === player) {
+        alert("It's a tie!")
+        // 3 will be current placeholder for "tie" 
+        return 3 
+    }
+//  if playerChoice is scissors
+    if (player == "Scissors" && comp == "Paper") {
+        alert("You win! ${player} beats ${comp}")
+        // 1 will be current placeholder for "player win" 
+        return 1 
+    }
 //         if computerChoice is rock, return "You lose! computerChoice beats playerChoice"
 //         else if computerChoice is paper, return "You win! playerChoice beats computerChoice"
 //     repeat if statement for paper and rock
 // function ends
 // ***NTS: May want to change return to a win or lose variable instead for
     // scorekeeping purposes
+}
+
+let playerChoice = getPlayerChoice();
+let computerChoice = getComputerChoice();
+console.log(playerChoice);
+console.log(computerChoice);
+rpsRound(computerChoice, playerChoice);
 
 // create new function game
 // make and set variable compScore to 0
