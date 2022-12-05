@@ -1,4 +1,4 @@
-// create function getComputerChoice
+// create function getComputerChoice, which sets computer choice to one of the three possibilities
 function getComputerChoice(){
     // create variable random in function
     // set random to a random number between 1 and 3
@@ -17,28 +17,35 @@ function getComputerChoice(){
     // return computerChoice from getComputerChoice
     return computerChoice
 }
-// Sets computer choice to one of the three possibilities
-let computerChoice = getComputerChoice();
 
-// create function getPlayerChoice
+// create function getPlayerChoice to get possible choices from user
 function getPlayerChoice(){
-    // create variable playerInput set equal to ""
-    // prompt user for input on command line, save to playerInput
-    let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
-    // set playerInput to lowercase
-    playerInput = playerInput.toLowerCase();
-    // capitalize first letter of playerInput
-    playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
-    console.log(playerInput);
+// if playerInput does not equal "Rock", "Paper", or 
+// "Scissors", respond "Invalid input" and return to 
+// beginning of function
+    let playerChoice = "";
+    let switch = true;
+    while(switch) {
+        // create variable playerInput set equal to ""
+        // prompt user for input on command line, save to playerInput
+        let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
+        // set playerInput to lowercase
+        playerInput = playerInput.toLowerCase();
+        // capitalize first letter of playerInput
+        playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
+        if (playerInput != "rock" || playerInput != "Scissors" || playerInput != "Paper")
+            alert("Invalid input! Please type 'rock', 'paper', or 'scissors'.")
+        else (playerInput == "rock" || playerInput == "Scissors" || playerInput == "Paper")
+            playerChoice = playerInput;
+            switch = false;
+    }
+    return playerChoice;
 }
 let playerChoice = getPlayerChoice();
+let computerChoice = getComputerChoice();
+console.log(playerChoice);
+console.log(computerChoice);
 
-
-
-// if playerInput does not equal "Rock", "Paper", or 
-//     "Scissors", respond "Invalid input" and return to 
-//     beginning of function? 
-// return playerChoice
 
 // create function to play a round of rps called playRound
 //     with two parameters, (computerChoice, playerChoice)
