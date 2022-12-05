@@ -80,15 +80,18 @@ function game() {
         }
     }
     if (scoreComp == scorePlayer) {
-        alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".") 
+        alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".")
+        break; 
     }
     if (scoreComp > scorePlayer) {
-        alert("You Lose! " + scoreComp + " to " + scorePlayer + ".") 
+        alert("You Lose! " + scoreComp + " to " + scorePlayer + ".")
     }
-    else {
+    if (scoreComp < scorePlayer) {
         alert("You Win! " + scorePlayer + " to " + scoreComp + ".")
     }
 }
+
+game();
 // run playround, incrementing playerScore and compScore accordingly
 // i++
 // if playerScore is greater than compScore, log "you win!"
