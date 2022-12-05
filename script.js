@@ -57,16 +57,41 @@ function rpsRound (comp, player){
     }
 }
 
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
-let victOrDefeat = rpsRound(computerChoice, playerChoice);
+
 console.log(victOrDefeat);
 
 // create new function game
 // make and set variable compScore to 0
 // make and set variable playerScore to 0
-// set variable i = 0
-// while loop i <= 4
+// set variable i = 0, while loop i <= 4 or thereabouts
+function game() {
+    let scoreComp = 0;
+    let scorePlayer = 0;
+    for (let i = 1; i < 6; i ++){
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        let victOrDefeat = rpsRound(computerChoice, playerChoice);
+        if (victOrDefeat == 1){
+            scorePlayer++;
+        }
+        if (victOrDefeat == 2){
+            scoreComp++;
+        }
+        else {
+            scorePlayer++;
+            scoreComp++;
+        }
+    }
+    if (scoreComp == scorePlayer) {
+        alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".") 
+    }
+    if (scoreComp > scorePlayer) {
+        alert("You Lose! " + scoreComp + " to " + scorePlayer + ".") 
+    }
+    else {
+        alert("You Win! " + scorePlayer + " to " + scoreComp + "."
+    }
+}
 // run playround, incrementing playerScore and compScore accordingly
 // i++
 // if playerScore is greater than compScore, log "you win!"
