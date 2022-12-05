@@ -25,12 +25,16 @@ function getPlayerChoice(){
     // create variable playerInput set equal to ""
     // prompt user for input on command line, save to playerInput
     let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
-    
+    // set playerInput to lowercase
+    playerInput = playerInput.toLowerCase();
+    // capitalize first letter of playerInput
+    playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
+    console.log(playerInput);
 }
 let playerChoice = getPlayerChoice();
 
-// set playerInput to lowercase
-// capitalize first letter of playerInput, save new string to playerChoice
+
+
 // if playerInput does not equal "Rock", "Paper", or 
 //     "Scissors", respond "Invalid input" and return to 
 //     beginning of function? 
