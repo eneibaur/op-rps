@@ -3,24 +3,27 @@ function getComputerChoice(){
 // create variable random in function
 // set random to a random number between 1 and 3
     let random = Math.floor(Math.random()*3) + 1;
-    console.log(random);
+    // create variable computerChoice containing ""
     let computerChoice = "";
+    // if random equals 1, set computerChoice to Rock
     if (random == 1)
         computerChoice = "Rock";
+    // if random equals 2, set computerChoice to Paper
     else if (random == 2) 
         computerChoice = "Paper";
+    // if random equals 3, set computerChoice to Scissors
     else if (random == 3)
         computerChoice = "Scissors";
+    // return computerChoice from getComputerChoice
     return computerChoice
 }
-
+// Sets computer choice to one of the three possibilities
 let computerChoice = getComputerChoice();
-console.log(getComputerChoice());
-// create variable computerChoice containing ""
-// if random equals 1, set computerChoice to Rock
-// if random equals 2, set computerChoice to Paper
-// if random equals 3, set computerChoice to Scissors
-// return computerChoice from getComputerChoice
+
+
+
+
+
 
 // create function getPlayerChoice
 // create variable playerInput set equal to ""
