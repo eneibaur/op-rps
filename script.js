@@ -41,25 +41,26 @@ function rpsRound (comp, player){
         // 3 will be current placeholder for "tie" 
         return 3 
     }
-//  if playerChoice is scissors
-    if (player == "Scissors" && comp == "Paper") {
-        alert("You win! ${player} beats ${comp}")
+//  if playerChoice is a winning combo
+    if (player == "Scissors" && comp == "Paper" || 
+    player == "Paper" && comp == "Rock" ||
+    player == "Rock" && comp == "Scissors") {
+        alert("You win! " + player + " beats " + comp + ".");
         // 1 will be current placeholder for "player win" 
         return 1 
     }
-//         if computerChoice is rock, return "You lose! computerChoice beats playerChoice"
-//         else if computerChoice is paper, return "You win! playerChoice beats computerChoice"
-//     repeat if statement for paper and rock
-// function ends
-// ***NTS: May want to change return to a win or lose variable instead for
-    // scorekeeping purposes
+// In all other cases
+    else {
+        alert("You Lose! " + comp + " beats " + player + ".");
+        // 2 will be current placeholder for "player win" 
+        return 2 
+    }
 }
 
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
-console.log(playerChoice);
-console.log(computerChoice);
-rpsRound(computerChoice, playerChoice);
+let victOrDefeat = rpsRound(computerChoice, playerChoice);
+console.log(victOrDefeat);
 
 // create new function game
 // make and set variable compScore to 0
