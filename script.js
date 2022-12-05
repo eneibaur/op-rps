@@ -81,7 +81,6 @@ function game() {
     }
     if (scoreComp == scorePlayer) {
         alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".")
-        break; 
     }
     if (scoreComp > scorePlayer) {
         alert("You Lose! " + scoreComp + " to " + scorePlayer + ".")
