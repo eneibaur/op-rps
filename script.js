@@ -57,9 +57,6 @@ function rpsRound (comp, player){
     }
 }
 
-
-console.log(victOrDefeat);
-
 // create new function game
 // make and set variable compScore to 0
 // make and set variable playerScore to 0
@@ -89,7 +86,7 @@ function game() {
         alert("You Lose! " + scoreComp + " to " + scorePlayer + ".") 
     }
     else {
-        alert("You Win! " + scorePlayer + " to " + scoreComp + "."
+        alert("You Win! " + scorePlayer + " to " + scoreComp + ".")
     }
 }
 // run playround, incrementing playerScore and compScore accordingly
