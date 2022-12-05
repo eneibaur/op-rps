@@ -24,8 +24,8 @@ function getPlayerChoice(){
 // "Scissors", respond "Invalid input" and return to 
 // beginning of function
     let playerChoice = "";
-    let switch = true;
-    while(switch) {
+    let gate = true;
+    while(gate) {
         // create variable playerInput set equal to ""
         // prompt user for input on command line, save to playerInput
         let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
@@ -33,13 +33,14 @@ function getPlayerChoice(){
         playerInput = playerInput.toLowerCase();
         // capitalize first letter of playerInput
         playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
-        if (playerInput != "rock" || playerInput != "Scissors" || playerInput != "Paper")
-            alert("Invalid input! Please type 'rock', 'paper', or 'scissors'.")
-        else (playerInput == "rock" || playerInput == "Scissors" || playerInput == "Paper")
+        console.log(playerInput);
+        if (playerInput != "Rock" || playerInput != "Scissors" || playerInput != "Paper")
+            alert("Invalid input! Please reload the page and type 'rock', 'paper', or 'scissors'.")
+        if (playerInput == "rock" || playerInput == "Scissors" || playerInput == "Paper")
             playerChoice = playerInput;
-            switch = false;
+            gate = false;    
+            return playerChoice;
     }
-    return playerChoice;
 }
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
