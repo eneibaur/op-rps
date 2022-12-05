@@ -1,7 +1,7 @@
 // create function getComputerChoice
 function getComputerChoice(){
-// create variable random in function
-// set random to a random number between 1 and 3
+    // create variable random in function
+    // set random to a random number between 1 and 3
     let random = Math.floor(Math.random()*3) + 1;
     // create variable computerChoice containing ""
     let computerChoice = "";
@@ -20,14 +20,15 @@ function getComputerChoice(){
 // Sets computer choice to one of the three possibilities
 let computerChoice = getComputerChoice();
 
-
-
-
-
-
 // create function getPlayerChoice
-// create variable playerInput set equal to ""
-// prompt user for input on command line, save to playerInput
+function getPlayerChoice(){
+    // create variable playerInput set equal to ""
+    // prompt user for input on command line, save to playerInput
+    let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
+    
+}
+let playerChoice = getPlayerChoice();
+
 // set playerInput to lowercase
 // capitalize first letter of playerInput, save new string to playerChoice
 // if playerInput does not equal "Rock", "Paper", or 
