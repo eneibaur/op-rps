@@ -20,28 +20,17 @@ function getComputerChoice(){
 
 // create function getPlayerChoice to get possible choices from user
 function getPlayerChoice(){
-// if playerInput does not equal "Rock", "Paper", or 
-// "Scissors", respond "Invalid input" and return to 
-// beginning of function
-    let playerChoice = "";
-    let gate = true;
-    while(gate) {
-        // create variable playerInput set equal to ""
-        // prompt user for input on command line, save to playerInput
-        let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
-        // set playerInput to lowercase
-        playerInput = playerInput.toLowerCase();
-        // capitalize first letter of playerInput
-        playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
-        console.log(playerInput);
-        if (playerInput != "Rock" || playerInput != "Scissors" || playerInput != "Paper")
-            alert("Invalid input! Please reload the page and type 'rock', 'paper', or 'scissors'.")
-        if (playerInput == "rock" || playerInput == "Scissors" || playerInput == "Paper")
-            playerChoice = playerInput;
-            gate = false;    
-            return playerChoice;
+    // create variable playerInput set equal to ""
+    // prompt user for input on command line, save to playerInput
+    let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
+    // set playerInput to lowercase
+    playerInput = playerInput.toLowerCase();
+    // capitalize first letter of playerInput
+    playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
+    let playerChoice = playerInput;
+    return playerChoice;
     }
-}
+
 let playerChoice = getPlayerChoice();
 let computerChoice = getComputerChoice();
 console.log(playerChoice);
