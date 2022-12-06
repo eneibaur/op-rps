@@ -81,12 +81,18 @@ function game() {
     }
     if (scoreComp == scorePlayer) {
         alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".")
+        scoreComp = 0;
+        scorePlayer = 0;
     }
     if (scoreComp > scorePlayer) {
         alert("You Lose! " + scoreComp + " to " + scorePlayer + ".")
+        scoreComp = 0;
+        scorePlayer = 0;
     }
     if (scoreComp < scorePlayer) {
         alert("You Win! " + scorePlayer + " to " + scoreComp + ".")
+        scoreComp = 0;
+        scorePlayer = 0;
     }
 }
 
