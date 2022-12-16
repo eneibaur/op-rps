@@ -1,29 +1,32 @@
-// create function getComputerChoice, which sets computer choice to one of the three possibilities
+const buttons = document.querySelectorAll(".buttons");
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert('you clicked ' + button.textContent)
+    })
+})
+
+// rock.addEventListener('click', () => {
+//     alert("You clicked Rock!");
+// });
+
+
 function getComputerChoice(){
-    // create variable random in function
-    // set random to a random number between 1 and 3
+    // Random number between 1-3 to represent Rock, Paper, scissors
     let random = Math.floor(Math.random()*3) + 1;
     // create variable computerChoice containing ""
     let computerChoice = "";
-    // if random equals 1, set computerChoice to Rock
     if (random == 1)
         computerChoice = "Rock";
-    // if random equals 2, set computerChoice to Paper
     else if (random == 2) 
         computerChoice = "Paper";
-    // if random equals 3, set computerChoice to Scissors
     else if (random == 3)
         computerChoice = "Scissors";
-    // return computerChoice from getComputerChoice
     return computerChoice
 }
 
-// create function getPlayerChoice to get possible choices from user
 function getPlayerChoice(){
-    // create variable playerInput set equal to ""
-    // prompt user for input on command line, save to playerInput
     let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
-    // set playerInput to lowercase
     playerInput = playerInput.toLowerCase();
     // capitalize first letter of playerInput
     playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
@@ -92,7 +95,7 @@ function game() {
     scorePlayer = 0;
 }
 
-game();
+// game();
 // run playround, incrementing playerScore and compScore accordingly
 // i++
 // if playerScore is greater than compScore, log "you win!"
