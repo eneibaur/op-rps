@@ -1,16 +1,3 @@
-const buttons = document.querySelectorAll(".buttons");
-
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        alert('you clicked ' + button.textContent)
-    })
-})
-
-// rock.addEventListener('click', () => {
-//     alert("You clicked Rock!");
-// });
-
-
 function getComputerChoice(){
     // Random number between 1-3 to represent Rock, Paper, scissors
     let random = Math.floor(Math.random()*3) + 1;
@@ -25,40 +12,49 @@ function getComputerChoice(){
     return computerChoice
 }
 
-function getPlayerChoice(){
-    let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
-    playerInput = playerInput.toLowerCase();
-    // capitalize first letter of playerInput
-    playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
-    let playerChoice = playerInput;
-    return playerChoice;
-    }
-
-// create function to play a round of rps called playRound
-//     with two parameters, (computerChoice, playerChoice)
 function rpsRound (comp, player){
-//  compare playerChoice to computerChoice
-//  if playerChoice strict equals computerChoice, return tie
-    if (comp === player) {
-        alert("It's a tie!")
-        // 3 will be current placeholder for "tie" 
-        return 3 
-    }
-//  if playerChoice is a winning combo
-    if (player == "Scissors" && comp == "Paper" || 
-    player == "Paper" && comp == "Rock" ||
-    player == "Rock" && comp == "Scissors") {
-        alert("You win! " + player + " beats " + comp + ".");
-        // 1 will be current placeholder for "player win" 
-        return 1 
-    }
-// In all other cases
-    else {
-        alert("You Lose! " + comp + " beats " + player + ".");
-        // 2 will be current placeholder for "player win" 
-        return 2 
-    }
-}
+    //  compare playerChoice to computerChoice
+    //  if playerChoice strict equals computerChoice, return tie
+        if (comp === player) {
+            alert("It's a tie!")
+            // 3 will be current placeholder for "tie" 
+            return 3 
+        }
+    //  if playerChoice is a winning combo
+        if (player == "Scissors" && comp == "Paper" || 
+        player == "Paper" && comp == "Rock" ||
+        player == "Rock" && comp == "Scissors") {
+            alert("You win! " + player + " beats " + comp + ".");
+            // 1 will be current placeholder for "player win" 
+            return 1 
+        }
+    // In all other cases
+        else {
+            alert("You Lose! " + comp + " beats " + player + ".");
+            // 2 will be current placeholder for "player win" 
+            return 2 
+        }
+};
+
+const buttons = document.querySelectorAll(".buttons");
+
+// Gets text content from buttons
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+       alert(button.textContent)
+    });
+});
+
+// function getPlayerChoice(){
+//     let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
+//     playerInput = playerInput.toLowerCase();
+//     // capitalize first letter of playerInput
+//     playerInput = playerInput.charAt(0).toUpperCase() + playerInput.slice(1);
+//     let playerChoice = playerInput;
+//     return playerChoice;
+//     }
+
+
 
 // create new function game
 // make and set variable compScore to 0
