@@ -20,6 +20,12 @@ buttons.forEach((button) => {
 let scorePlayer = 0;
 let scoreComp = 0;
 
+const scoreOne = document.querySelector(".scoreOne");
+const scoreTwo = document.querySelector(".scoreTwo");
+
+scoreOne.innerText = "0";
+scoreTwo.innerText = "0";
+
 function rpsRound (comp, player){
     //  compare playerChoice to computerChoice
     //  if playerChoice strict equals computerChoice, return tie
@@ -44,24 +50,30 @@ function rpsRound (comp, player){
         }
 };
 
+function modifyScorePlayer() {
+    scorePlayer++;
+    scoreOne.innerText = scorePlayer;
+}
+
+function modifyScoreComp() {
+    scoreComp++;
+    scoreTwo.innerText = scoreComp;
+}
+
 function game(comp, player) {
     let playerChoice = player;
     let computerChoice = comp;
     let victOrDefeat = rpsRound(computerChoice, playerChoice);
     if (victOrDefeat == 1){
-        scorePlayer++;
+        modifyScorePlayer();
     }
     if (victOrDefeat == 2){
-        scoreComp++;
+        modifyScoreComp();
     }
     if (victOrDefeat == 3) {
-        scorePlayer++;
-        scoreComp++;
+        modifyScorePlayer();
+        modifyScoreComp();
     };
-    console.log(playerChoice)
-    console.log(computerChoice)
-    console.log(scorePlayer)
-    console.log(scoreComp)
     if (scoreComp == 5 || scorePlayer == 5) {
         if (scoreComp == scorePlayer) {
             alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".")
@@ -76,13 +88,6 @@ function game(comp, player) {
         scorePlayer = 0; 
     };
 };
-
-
-const scoreOne = document.querySelector(".scoreOne");
-const scoreTwo = document.querySelector(".scoreTwo");
-
-scoreOne.innerHTML = scorePlayer;
-scoreTwo.innerHTML = scoreComp;
 
 // const rock = document.querySelector('#rock');
 // let playerChoice = rock.textContent;
