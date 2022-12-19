@@ -36,17 +36,19 @@ function rpsRound (comp, player){
         }
 };
 
-const rock = document.querySelector('#rock');
-let playerChoice = rock.textContent;
+const buttons = document.querySelectorAll('.buttons');
 
-rock.addEventListener('click', () => rpsRound(getComputerChoice(), rock.textContent));
+buttons.forEach((button) => {
+    button.addEventListener('click', () => rpsRound(getComputerChoice(), button.textContent));
+});
 
 
-// const buttons = document.querySelectorAll('.buttons');
+// const rock = document.querySelector('#rock');
+// let playerChoice = rock.textContent;
 
-// buttons.forEach((button) => {
-//     button.addEventListener('click', rpsRound(getComputerChoice(), button.textContent));
-// });
+// rock.addEventListener('click', () => rpsRound(getComputerChoice(), rock.textContent));
+
+
 
 // function getPlayerChoice(){
 //     let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
