@@ -12,6 +12,14 @@ function getComputerChoice(){
     return computerChoice
 }
 
+const buttons = document.querySelectorAll('.buttons');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => game(getComputerChoice(), button.textContent));
+});
+
+let scorePlayer = 0;
+let scoreComp = 0;
+
 function rpsRound (comp, player){
     //  compare playerChoice to computerChoice
     //  if playerChoice strict equals computerChoice, return tie
@@ -36,19 +44,49 @@ function rpsRound (comp, player){
         }
 };
 
-const buttons = document.querySelectorAll('.buttons');
+function game(comp, player) {
+    let playerChoice = player;
+    let computerChoice = comp;
+    let victOrDefeat = rpsRound(computerChoice, playerChoice);
+    if (victOrDefeat == 1){
+        scorePlayer++;
+    }
+    if (victOrDefeat == 2){
+        scoreComp++;
+    }
+    if (victOrDefeat == 3) {
+        scorePlayer++;
+        scoreComp++;
+    };
+    console.log(playerChoice)
+    console.log(computerChoice)
+    console.log(scorePlayer)
+    console.log(scoreComp)
+    if (scoreComp == 5 || scorePlayer == 5) {
+        if (scoreComp == scorePlayer) {
+            alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".")
+        };
+        if (scoreComp > scorePlayer) {
+            alert("You Lose! " + scoreComp + " to " + scorePlayer + ".")
+        };
+        if (scoreComp < scorePlayer) {
+            alert("You Win! " + scorePlayer + " to " + scoreComp + ".")
+        };
+        scoreComp = 0;
+        scorePlayer = 0; 
+    };
+};
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => rpsRound(getComputerChoice(), button.textContent));
-});
 
+const scoreOne = document.querySelector(".scoreOne");
+const scoreTwo = document.querySelector(".scoreTwo");
+
+scoreOne.innerHTML = scorePlayer;
+scoreTwo.innerHTML = scoreComp;
 
 // const rock = document.querySelector('#rock');
 // let playerChoice = rock.textContent;
-
 // rock.addEventListener('click', () => rpsRound(getComputerChoice(), rock.textContent));
-
-
 
 // function getPlayerChoice(){
 //     let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
@@ -59,42 +97,10 @@ buttons.forEach((button) => {
 //     return playerChoice;
 //     }
 
-
-
 // create new function game
 // make and set variable compScore to 0
 // make and set variable playerScore to 0
 // set variable i = 0, while loop i <= 4 or thereabouts
-function game() {
-    let scoreComp = 0;
-    let scorePlayer = 0;
-    for (let i = 1; i < 6; i ++){
-        let playerChoice = getPlayerChoice();
-        let computerChoice = getComputerChoice();
-        let victOrDefeat = rpsRound(computerChoice, playerChoice);
-        if (victOrDefeat == 1){
-            scorePlayer++;
-        }
-        if (victOrDefeat == 2){
-            scoreComp++;
-        }
-        else {
-            scorePlayer++;
-            scoreComp++;
-        }
-    }
-    if (scoreComp == scorePlayer) {
-        alert("It's a tie! " + scoreComp + " to " + scorePlayer + ".")
-    }
-    if (scoreComp > scorePlayer) {
-        alert("You Lose! " + scoreComp + " to " + scorePlayer + ".")
-    }
-    if (scoreComp < scorePlayer) {
-        alert("You Win! " + scorePlayer + " to " + scoreComp + ".")
-    }
-    scoreComp = 0;
-    scorePlayer = 0;
-}
 
 // game();
 // run playround, incrementing playerScore and compScore accordingly
