@@ -23,8 +23,18 @@ let scoreComp = 0;
 const scoreOne = document.querySelector(".scoreOne");
 const scoreTwo = document.querySelector(".scoreTwo");
 
-scoreOne.innerText = "0";
-scoreTwo.innerText = "0";
+scoreOne.innerText = "Player Score: " + scorePlayer;
+scoreTwo.innerText = "Computer Score: " + scoreComp;
+
+function modifyScorePlayer() {
+    scorePlayer++;
+    scoreOne.innerText = "Player Score: " + scorePlayer;
+}
+
+function modifyScoreComp() {
+    scoreComp++;
+    scoreTwo.innerText = "Computer Score: " + scoreComp;
+}
 
 function rpsRound (comp, player){
     //  compare playerChoice to computerChoice
@@ -49,16 +59,6 @@ function rpsRound (comp, player){
             return 2 
         }
 };
-
-function modifyScorePlayer() {
-    scorePlayer++;
-    scoreOne.innerText = scorePlayer;
-}
-
-function modifyScoreComp() {
-    scoreComp++;
-    scoreTwo.innerText = scoreComp;
-}
 
 function game(comp, player) {
     let playerChoice = player;
@@ -86,6 +86,8 @@ function game(comp, player) {
         };
         scoreComp = 0;
         scorePlayer = 0; 
+        scoreOne.innerText = "Player Score: " + scorePlayer;
+        scoreTwo.innerText = "Computer Score: " + scoreComp;
     };
 };
 
